@@ -292,5 +292,4 @@ is locally.
 1. Live deployed app: _add Render frontend URL here after deploying (see
    [Deploying to Render](#deploying-to-render))_
 2. YouTube demo link: _add after recording_
-3. GitHub repo link: _add after pushing this folder_
-4. One-page write-up: [`ONE_PAGER.md`](./ONE_PAGER.md)
+3. GitHub repo link: [github.com/VirtualBeetle/senus-board-report](https://github.com/VirtualBeetle/senus-board-report)
