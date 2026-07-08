@@ -63,10 +63,13 @@ services:
     dockerfilePath: ./frontend/Dockerfile
     dockerContext: ./frontend
     envVars:
-      # host:port of the backend's private-network address (no scheme -
-      # next.config.js normalizes this to http://<value> at request time).
-      - key: BACKEND_INTERNAL_URL
+      # Backend's public onrender.com URL (includes scheme, so
+      # next.config.js uses it as-is). Using the public URL rather than the
+      # private-network hostport sidesteps intra-service private networking
+      # entirely - the Next.js server just makes a normal outbound HTTPS
+      # request to the backend, same as any other client would.
+      - key: BACKEND_PUBLIC_URL
         fromService:
           type: web
           name: senus-board-report-backend
-          property: hostport
+          property: url

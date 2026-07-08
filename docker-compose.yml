@@ -49,7 +49,7 @@ services:
       # Server-side only (read by next.config.js's rewrites()); the browser
       # never sees this value or talks to the backend directly. "backend" is
       # this compose file's service name, resolved via Docker's internal DNS.
-      BACKEND_INTERNAL_URL: http://backend:8000
+      BACKEND_PUBLIC_URL: http://backend:8000
     ports:
       - "3000:3000"
 

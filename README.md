@@ -228,9 +228,9 @@ click — no manual dashboard configuration, no Docker setup on the reviewer's e
    in `backend/Dockerfile`) and deploys all three resources together.
 4. Once both services are live, open the **frontend** service's `onrender.com` URL — that's the
    single link to hand to a reviewer. The frontend's server-side Next.js rewrite proxies
-   `/api/*` to the backend over Render's private network (`BACKEND_INTERNAL_URL`, wired
-   automatically via the Blueprint's `fromService` reference), so the browser only ever talks
-   to one origin and there's no CORS configuration to get right.
+   `/api/*` to the backend's public URL (`BACKEND_PUBLIC_URL`, wired automatically via the
+   Blueprint's `fromService` reference), so the browser only ever talks to one origin and
+   there's no CORS configuration to get right.
 5. The backend also gets its own public URL if you want to show `/api/health` or the
    auto-generated Swagger docs at `/docs` directly.
 
